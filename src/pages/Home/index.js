@@ -1,10 +1,12 @@
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import api from '../../services/api.js'
-import { Link } from "react-router-dom"
-import cardSimples from "../../components/cardSimples"
+import MontarCard from "../../components/montarCard"
 
 export default function Home() {
     
+    // faz um carregamento de página enquanto está pesquisando os dados
+    const [loading,setLoading] = useState(true)
+
     useEffect(() => {
 
         async function consultarArtigos(categoria){
@@ -17,12 +19,13 @@ export default function Home() {
                     // é necessario converter em json para armazenar na sessão
                     const resposta_json = JSON.stringify(resposta.data.results)
     
-                    // armazena os artigos de determinado topico em uma sessão local
+                    // armazena os artigos de determinado tópico em uma sessão local
                     sessionStorage.setItem(`${categoria}`,resposta_json)
                     console.log(resposta.data)
                 }
 
             }
+            setLoading(false)
             
         }
         
@@ -32,16 +35,24 @@ export default function Home() {
         consultarArtigos('business')
     },[])
 
+    if (loading){
+        return (
+            <div className="home">
+                <div className="icone-carregamento">Carregando...</div>
+            </div>
+        )
+    } 
+
     return (
         <div className="home">
-            {
-                // renderiza as categorias colocadas na sessão
-                JSON.parse(sessionStorage.getItem('politics')).map((item) => {
-                    return (
-                        <cardSimples image={`${item.image_url}`} title={`${item.title}`}/>
-                    )
-                })
-            }
+            <h1> Politica </h1>
+            {/* coloca na tela as categorias selecionadas  */}
+            {/* IMPLEMENTAR: pré-carregar todos os tópicos e coloca-los na página */}
+            <MontarCard qtd={3} categoria={'politics'} cartao={1}/>
+
+            <h1> Negócios </h1>
+            <MontarCard qtd={3} categoria={'business'} cartao={2} />
+           
         </div>
     )
 }
