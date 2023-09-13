@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import api from '../../services/api.js'
 import MontarCard from "../../components/montarCard"
+import Btn from "../../components/btn/index.js"
 
 export default function Home() {
     
@@ -45,10 +46,12 @@ export default function Home() {
 
     return (
         <div className="home">
+            <MontarCard qtd={1} categoria={'entertainment'} cartao={3} />
             <h1> Politica </h1>
             {/* coloca na tela as categorias selecionadas  */}
             {/* IMPLEMENTAR: pré-carregar todos os tópicos e coloca-los na página */}
             <MontarCard qtd={3} categoria={'politics'} cartao={1}/>
+            <Btn categoria={'politics'}> Leia Mais </Btn>
 
             <h1> Negócios </h1>
             <MontarCard qtd={3} categoria={'business'} cartao={2} />

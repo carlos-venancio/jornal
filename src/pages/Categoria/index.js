@@ -9,10 +9,12 @@ export default function Categoria(){
     const pagina = useNavigate();
 
     console.log(categoria)
+
     useEffect(() => {
         // verifica se a categoria existe
-        if (sessionStorage.getItem(categoria) == null){
-            pagina('/')
+        if (sessionStorage.getItem(categoria) == null || sessionStorage.getItem(categoria) == undefined){
+                pagina("/",{replace: true})
+            return 
         }
     })
 

@@ -3,4 +3,4 @@ Api utilizada: https://newsdata.io
 
 É uma rest API simples que aglomerado de dados de diversos fontes (sites) sobre diversas noticias.
 
-O unico método empregado é o GET.   
+O unico método empregado é o GET.       
