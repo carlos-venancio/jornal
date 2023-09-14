@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import api from '../../services/api.js'
 import MontarCard from "../../components/montarCard"
 import Btn from "../../components/btn/index.js"
+import ConsultarArtigos from "../../components/consultaArtigos/index.js"
 
 export default function Home() {
     
@@ -9,31 +9,16 @@ export default function Home() {
     const [loading,setLoading] = useState(true)
 
     useEffect(() => {
-
-        async function consultarArtigos(categoria){
-
-            if (sessionStorage.getItem(`${categoria}`) == null){
-                // pegar os artigos na api
-                const resposta = await api.get(`api/1/news?apikey=pub_291299d118ab7284974c4d4015ef2dcea8f92&country=br&image=1&full_content=1&category=${categoria}`)
-                
-                if (resposta.data.length != 0) {
-                    // é necessario converter em json para armazenar na sessão
-                    const resposta_json = JSON.stringify(resposta.data.results)
-    
-                    // armazena os artigos de determinado tópico em uma sessão local
-                    sessionStorage.setItem(`${categoria}`,resposta_json)
-                    console.log(resposta.data)
-                }
-
-            }
-            setLoading(false)
-            
-        }
-        
         // carregar algumas categorias por padrão
-        consultarArtigos('entertainment')
-        consultarArtigos('politics')
-        consultarArtigos('business')
+        ConsultarArtigos('entertainment')
+        ConsultarArtigos('politics')
+        ConsultarArtigos('business')
+
+        // espera 3s para evita que a página dê erro por ainda não ter retornado os dados
+        setTimeout(() => {
+            setLoading(false)
+        },3000)
+
     },[])
 
     if (loading){
@@ -55,7 +40,8 @@ export default function Home() {
 
             <h1> Negócios </h1>
             <MontarCard qtd={3} categoria={'business'} cartao={2} />
-           
+            
+            <MontarCard qtd={3} categoria={'entertainment'} cartao={1} />
         </div>
     )
 }
