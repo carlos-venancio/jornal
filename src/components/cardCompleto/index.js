@@ -1,22 +1,21 @@
 import { Link } from "react-router-dom";
+import './cardCompleto.css'
 
 export default function CardCompleto(props){
     return (
-        <div className="container-card">
+        <div className="card-row-cc">
             <div>
-                <img src={props.image} alt={props.title} />
+                <img src={props.image} alt={props.title} className="card-img-cc" />
             </div>
-            <div>
-                <Link to={`/categoria/${props.category}/${props.id}`}>
+            <div className="card-info-cc">
+                <Link to={`/categoria/${props.category}/${props.id}`} className="card-title-cc">
                     <h3> {props.title} </h3>
                 </Link>
-                {/* exibe uma parte da descrição - até o próximo ponto depois de 300 palavras */}
-                <p> {props.desc.substr(0,props.desc.indexOf('.',300) + 1)}</p>
                 {/* pega apenas o ano,mês e dia da data */}
-                <p> {new Date(props.date).toLocaleDateString()} </p>
+                <p className="card-horario"> {new Date(props.date).toLocaleDateString()} </p>
             </div>
             <div>
-                <p> {props.font} </p>
+                <p className="card-font"> {props.font} </p>
             </div>
         </div>
     )

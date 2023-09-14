@@ -18,6 +18,8 @@ async function ConsultarArtigos(categoria){
             sessionStorage.setItem(categoria,resposta_json)
         }
     }
+
+    return true
 }
 
 export default ConsultarArtigos

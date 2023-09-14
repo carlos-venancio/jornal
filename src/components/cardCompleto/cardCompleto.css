@@ -1,0 +1,54 @@
+.card-row-cc {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.card-img-cc {
+    width: 300px;
+    height: 100%;
+}
+
+.card-info-cc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 100%;
+    margin: 0 20px;
+}
+
+.card-title-cc {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.card-title-cc:hover {
+    text-decoration: underline;
+}
+
+.card-font {
+    margin: 6px;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: blanchedalmond;
+}
+
+@media screen and (max-width:800px){
+    .card-row-cc {
+        flex-direction: column;
+        width: 420px;
+        height: 430px;
+        margin-top: 20px;
+    }
+
+    .card-img-cc {
+        width: 100%;
+    }
+
+    .card-font,.card-horario  {
+        display: none;
+    }
+}

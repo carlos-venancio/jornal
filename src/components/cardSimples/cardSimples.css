@@ -1,0 +1,19 @@
+.card-link-cs {
+    margin: 20px 0;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    text-align: center;
+}
+
+.card-link-cs:hover {
+    text-decoration: underline;
+}
+
+.container-card-cs {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.2)
+}

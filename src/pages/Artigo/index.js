@@ -28,14 +28,14 @@ export default function Artigo(){
 
     if(loading){
         return (
-            <div>
+            <div className="container">
                 <p>Carregando...</p>
             </div>
         )
     }
 
     return(
-        <div className="container-artigo">
+        <div className="container">
 
             <p> Home &gt; {categoria}</p>
 
