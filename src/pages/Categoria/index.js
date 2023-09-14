@@ -9,28 +9,15 @@ export default function Categoria(){
     const [loading,setLoading] = useState(true)
     const { categoria } = useParams();
     const pagina = useNavigate();
-    const categorias = [ "business", "entertainment", "environment", "food", "politics", "sports", "science", "technology" ]
-
+  
     useEffect(() => {
 
-        
         // verifica se a categoria é uma possibilidade dentro do sistema
-        const existeOpcao = categorias.some((category) => category === categoria)
-
-        if(existeOpcao){
-            // consulta os dados da categoria caso não tenha
-            // renderiza quando tiver todos os dados
-            if (sessionStorage.getItem(categoria) == null){
-                ConsultarArtigos(categoria)
-            }
-
-        }else {
+        if(sessionStorage.getItem(categoria) === null){
             pagina('/',{replace: true})
         }
-
-        setTimeout(() => {
-            setLoading(false)
-        },2000)
+    
+        setLoading(false)
     },[])
 
     if(loading){

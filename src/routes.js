@@ -14,8 +14,8 @@ export default function Rotas() {
         <Header />
         {/* configuração do caminho das 4 páginas */}
             <Routes>
-                <Route exact path="/:categoria" element={<Categoria />}/>
-                <Route exact path="/:categoria/:id" element={<Artigo />}/>
+                <Route exact path="/categoria/:categoria" element={<Categoria />}/>
+                <Route exact path="/categoria/:categoria/:id" element={<Artigo />}/>
                 <Route exact path="/" element={<Home />}/>
                 <Route exact path="*" element={<NotFound />}/>
             </Routes>

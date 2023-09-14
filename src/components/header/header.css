@@ -9,8 +9,9 @@
     display: flex;
     width: 100%;
     flex-direction: row;
+    align-items: center;
     background-color: #5297FF;
-    height: 8vh;
+    height: 9vh;
     justify-content: space-between;
 }
 
@@ -20,31 +21,20 @@
     margin-left: 6vh;
 }
 
-
-.divPesq{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-input{
-    padding: 5px;
-    outline: none;
-}
-
 .catalogo{
     display: flex;
     flex-direction:inherit;
-    top: 10%;
-
 }
+
 .catalogo a{
     width: 100%;
+    padding: 5px;
     padding-left: 5%;
     align-items: center;
     text-decoration: none;
     color: blue;
     background-color: yellow;
+    margin-bottom: 40px;
     
     /* main{
         width: 100%;

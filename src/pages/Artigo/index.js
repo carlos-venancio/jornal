@@ -10,19 +10,20 @@ export default function Artigo(){
     const { categoria, id } = useParams()
 
     useEffect(() => {
-        JSON.parse(sessionStorage.getItem(categoria)).forEach((item) => {
-            console.log(item.article_id)
-            
-            if(item.article_id === id){
-                setArtigo(item)
-            }
-        },[])
-
-        if (artigo === {}){
+    
+        // pega o artigo clicado
+        let art = JSON.parse(sessionStorage.getItem(categoria)).filter((item) => {
+            return item.article_id === id
+        })
+    
+        // valida se o artigo existe
+        if (art.length === 0){
             pagina('/',{replace: true})
         }
 
+        setArtigo(art[0])
         setLoading(false)
+
     },[])
 
     if(loading){
@@ -46,6 +47,7 @@ export default function Artigo(){
             <img src={artigo.image_url}/>
             <p>{artigo.description}</p>
 
+            {/* consulta a materia completa no site de origem */}
             <a href={artigo.link} target="_blank"> Leia mais</a>
         </div>
     )

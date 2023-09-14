@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './header.css';
+import logo from '../../assets/logo.png'
 
 function Header(){
      
@@ -7,21 +8,16 @@ function Header(){
         <div>
             <div className="header">
                 <div>
-                    <img className='icon' src='icon.png' alt='logo'/>
-                </div>
-                <div className='pesq'>
-
+                    <img className='icon' src={logo} alt='logo'/>
                 </div>
             </div>
             <div className="catalogo">
-                <Link className="link-home"   to="/business">Negócios</Link>
-                <Link className="link-home"   to="/politics">Política</Link>
-                <Link className="link-home"   to="/sports">Esporte</Link>
-                <Link className="link-home"   to="/technology">Tecnologia</Link>
-                <Link className="link-home"   to="/food">Comida</Link>
-                <Link className="link-home"   to="/entertainment">Entretenimento</Link>
-                <Link className="link-home"   to="/science">Ciência</Link>
-                <Link className="link-home"   to="/environment">Ambiente</Link>
+                <Link className="link-home"   to="/categoria/business">Negócios</Link>
+                <Link className="link-home"   to="/categoria/politics">Política</Link>
+                <Link className="link-home"   to="/categoria/sports">Esporte</Link>
+                <Link className="link-home"   to="/categoria/technology">Tecnologia</Link>
+                <Link className="link-home"   to="/categoria/entertainment">Entretenimento</Link>
+                <Link className="link-home"   to="/categoria/science">Ciência</Link>
             </div>
          </div>   
      )
