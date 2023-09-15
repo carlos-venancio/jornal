@@ -18,7 +18,7 @@ image        |  Pesquise os artigos com imagem em destaque ou sem imagem em dest
 
 ## Exemplo de retorno
 
-~~~json
+~~~js
 {
 "status": "sucesso",
 "totalResultados": 8132,
