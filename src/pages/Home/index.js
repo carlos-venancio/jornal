@@ -15,27 +15,22 @@ export default function Home() {
         // representa as categorias que seram precarregadas
         const categorias = [ "business", "entertainment","politics" , "sports", "science", "technology" ]
 
-        // executa todas as buscas 
+        // executa todas as buscas
         categorias.map(async (categoria) => {
             await ConsultarArtigos(categoria)
         })
 
-        // garante que todas as buscar foram feitas
-        const buscasFeitas = categorias.slice(0,3).every((categoria) => {
-
-            // verifica se a categoria já foi consultada
-            const teste = sessionStorage.getItem(categoria) !== null
-            return teste
-        })
-        
         // caso todos as categorias estejam carregadas (true) para de exibir o loop (muda para false)
-        setLoading(!buscasFeitas)
+        setTimeout(() => {
+            setLoading(false)
+        },1500)
+        
     },[])
 
     if (loading){
         return (
             <div className="container">
-                <div className="icone-carregamento">Carregando...</div>
+                <div className="carregamento"></div>
             </div>
         )
     } 
@@ -74,6 +69,7 @@ export default function Home() {
                         <MontarCard qtd={2} categoria={'business'} cartao={2} inicio={3} />
                     </div>
                 </div>
+
                 <Btn categoria={'politics'}> Mais dessa categoria </Btn>
                 <hr className="line"/>
             </section>

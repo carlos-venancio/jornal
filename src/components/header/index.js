@@ -7,12 +7,11 @@ function Header(){
     return(
         <div>
             <div className="header">
-                <Link to="/">
-                    <img className='icon' src={logo} alt='logo'/>
-                </Link>
-                <Link to="/" className="voltar">
-                    <p>Home</p>
-                </Link>
+                <div>
+                    <Link to="/">
+                        <img className='icon' src={logo} alt='logo'/>
+                    </Link>
+                </div>
             </div>
             <div className="catalogo">
                 <Link className="link-home"   to="/categoria/business">Negócios</Link>

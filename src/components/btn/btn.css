@@ -1,3 +1,7 @@
+:root {
+    --cor-principal: #5297FF;
+}
+
 .container-btn {
     margin: 30px;
     display: flex;

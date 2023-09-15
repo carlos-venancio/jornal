@@ -38,6 +38,27 @@
     text-transform: capitalize;
 }
 
+section {
+    width: 100%;
+}
+
+.carregamento {
+    width: 70px;
+    height: 70px;
+    
+    border: 7px solid gray;
+    border-top-color: var(--cor-principal);
+    border-radius: 50%;
+    
+    animation: rodar 1s linear infinite;
+}
+
+@keyframes rodar{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 @media screen and (max-width:1100px){
     .capa-row {
         flex-direction: column;
@@ -48,6 +69,6 @@
         flex-direction: row !important;
         justify-content: center !important;
         align-items: center;
-        width: 90%;
+        width: 100%;
     }
 }
