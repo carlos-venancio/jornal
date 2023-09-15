@@ -1,4 +1,4 @@
-import icon from '../../assets/icon-notfound.png
+import icon from '../../assets/icon-notfound.png'
 import './notfound.css'
 
 export default function NotFound(){
