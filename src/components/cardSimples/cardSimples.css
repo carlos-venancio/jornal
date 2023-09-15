@@ -1,3 +1,10 @@
+.container-card-cs {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+}
+
 .card-link-cs {
     margin: 20px 0;
     text-decoration: none;
@@ -10,10 +17,3 @@
     text-decoration: underline;
 }
 
-.container-card-cs {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    height: 400px;
-    box-shadow: 2px 3px 8px rgba(0,0,0,0.2)
-}

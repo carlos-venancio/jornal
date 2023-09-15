@@ -47,7 +47,7 @@ export default function Home() {
     return (
         <div className="container">
 
-            <div className="row">
+            <div className="capa">
                 <MontarCard qtd={1} categoria={'entertainment'} cartao={3} />
                 <div className="column">
                     <MontarCard qtd={2} categoria={'politics'} cartao={2} />
@@ -56,7 +56,7 @@ export default function Home() {
 
             <hr className="line"/>
 
-            <h1> Politica </h1>
+            <h1 className="titulo"> Politica </h1>
             {/* coloca na tela as categorias selecionadas  */}
             {/* IMPLEMENTAR: pré-carregar todos os tópicos e coloca-los na página */}
             
@@ -66,9 +66,17 @@ export default function Home() {
 
             <Btn categoria={'politics'}> Leia Mais </Btn>
 
-            <h1> Negócios </h1>
-            <MontarCard qtd={3} categoria={'business'} cartao={2} />
-            
+            <h1 className="titulo"> Negócios </h1>
+
+            <div className="row">
+                <div className="column">
+                    <MontarCard qtd={2} categoria={'business'} cartao={2} />
+                </div>
+                <div className="column">
+                    <MontarCard qtd={2} categoria={'business'} cartao={2} />
+                </div>
+            </div>
+
             <MontarCard qtd={3} categoria={'entertainment'} cartao={1} />
         </div>
     )

@@ -3,20 +3,24 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 420px;
-    height: 430px;
+    width: 450px;
+    height: 450px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
 .card-title {
     color: black;
     font-weight: lighter;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 30px;
     padding: 0 30px;
     text-decoration: none;
     overflow: hidden;
     margin-bottom: 10px;
+}
+
+.card-title:hover {
+    text-decoration: underline;
 }
 
 .card-img {

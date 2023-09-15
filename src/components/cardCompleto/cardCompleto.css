@@ -1,7 +1,8 @@
 .card-row-cc {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 650px;
+    margin: 15px 0;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
@@ -21,7 +22,7 @@
 
 .card-title-cc {
     color: black;
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
 }
 

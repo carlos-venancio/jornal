@@ -1,17 +1,32 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin: 20px 2%;
+    margin: 20px 50px;
 }
 
-.row {
+.capa {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.line {
+    width: 90%;
+    margin: 40px 0;
+    height: 2px;
+    background-color: gray;
+}
+
+.titulo {
+    margin-bottom: 20px;
 }
