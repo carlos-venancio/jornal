@@ -8,7 +8,7 @@
     text-decoration: none;
     font-size: 14pt;
     color: black;
-    background-color: #5297FF;
+    background-color: var(--cor-principal);
     padding: 10px;
     color: whitesmoke;
     border-radius: 5px;

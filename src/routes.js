@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Artigo from './pages/Artigo'
 import NotFound from './pages/NotFound'
 import Categoria from './pages/Categoria'
+import Footer from './components/footer/footer'
 
 // gerenciamento interno das "páginas"
 export default function Rotas() {
@@ -19,6 +20,7 @@ export default function Rotas() {
                 <Route exact path="/" element={<Home />}/>
                 <Route exact path="*" element={<NotFound />}/>
             </Routes>
+	<Footer />
         </BrowserRouter>
     )
 }
