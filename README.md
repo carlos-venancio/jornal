@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# RESUMO DA API NEWSDATA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[newsdata](https://newsdata.io) é uma API de notícias que fornece acesso a artigos de notícias de todo o mundo. A API permite pesquisar artigos de notícias com base em palavras-chave, frases, intervalo de datas, idioma, localização, editora e outros critérios.
 
-## Available Scripts
+A api utiliza chaves para fazer o controle do número de usuários. Para obter uma chave é necessário fazer uma conta no site: <https://newsdata.io/register>. Encontraremos a chave no painel do usuario, dentro da aba chave api.
 
-In the project directory, you can run:
+As contas possui níveis, chamados de assinatura, e representam a liberdade do usuário dentro do sistema. Assim que criamos uma conta obtemos uma assinatura livre que possui um limite de 200 requisições por dia, cada requisição contendo 10 artigos, independente da categoria, contendo um limite de requisições durante um período de tempo. No caso da assinatura livre, é 30 requisições que podem ser feitas no intervalo máximo de 15 minutos. Além disso, é liberado apenas um endpoint: o Latest News (referido como "news").
 
-### `npm start`
+## Parâmetros Utilizados
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Parâmetros   |  Descrição
+------------ |  -------------------  
+apikey       |  Você precisa adicionar sua chave de API ao acessar a API de dados de notícias
+country      |  Pesquise os artigos de um país específico. Você pode adicionar até 5 países em uma única consulta
+category     |  Pesquise os artigos de notícias para uma categoria específica. Você pode adicionar até 5 categorias em uma única consulta
+full_content |  Pesquise os artigos com conteúdo completo ou sem conteúdo completo. Use "1" para artigos de notícias que contenham o objeto de resposta full_content e "0" para artigos de notícias que não contenham o objeto de resposta full_content
+image        |  Pesquise os artigos com imagem em destaque ou sem imagem em destaque. Use 1 para artigos com imagem em destaque e 0 para artigos sem imagem em destaque.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Exemplo de retorno
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+~~~json
+{
+"status": "sucesso",
+"totalResultados": 8132,
+-"resultados": [
+-{
+"article_id": "bacb1324366b7316aba577ea0ff2bd13",
+"título": "Von Boateng bis Mustafi: Diese deutschen Nationalspieler sind vereinslos",
+"ligação": "https://www.maz-online.de/sport/von-boateng-bis-mustafi-diese-deutschen-nationalspieler-sind-vereinslos-L6CG7E5P3REHBKJBRMM2HBCBPA.html",
+"palavras-chave": nulo,
+-"criador": [
+"Bohne Maximiliano"
+],
+"video_url": nulo,
+"descrição": "Während die meisten europäischen Transferfenster bereits geschlossen haben, sind einige ( ehemalige ) Topspieler noch immer vereinslos. No Sportbuzzer, você pode encontrar o Überblick über den aktuellen Stand be acht ehemaligen deutschen Nationalspielern, o noch immer a Klubsuche sind.",
+"conteúdo": "Jerome Boateng ( li. ) e Shkodran Mustafi sind derzeit vereinslos. © Quelle: imagens imago / ActionPictures / Sports Press Photo / ZUMA Wire ( Montagem ) Während die meisten europäischen Transferfenster bereits geschlossen haben, sind einige ( ehemalige ) Topspieler noch immer vereins. No Sportbuzzer, você pode encontrar o Überblick über den aktuellen Stand be acht ehemaligen deutschen Nationalspielern, o noch immer a Klubsuche sind. Você está aqui para escolher Jerome Boateng, Shkodran Mustafi e Co.? Gleich acht deutsche Nationalspieler, darunter zwei Weltmeister de 2014, também conhecido como Ende der Transferperiode in the meisten europäischen Ländern noch immer ohne Verein. Die gute Nachricht:Vereinslose Spieler können auch zwischen den Transferfenstern bei neuen Arbeitgebern anheuern - e também o somit vielleicht auch for als Kandidaten for the DFB-Elf ins Spiel trazer. No Sportbuzzer zeigt, welche früheren DFB-Kicker derzeit auf eine neue Aufgabe hoffen. Nach zwei Jahren bei Olympique Lyon é Jerome Boateng e morre Sommer vereinslos. Bei den Franzosen nahm er allerdings ohnehin nur eine sportliche Nebenrolle ein. Ans Aufhören denkt der langjährige Abwehrchef des FC Bayern München und der Nationalmannschaft deswegen aber noch lange nicht, das ließ er bereits Anfang des Jahres verlauten. Er wolle noch einmal topfit angreifen, hieß es damals. Um Verein für sein Vorhaben hat Boateng aber bislang nicht gefunden. Schlagzeilen um seine Pessoa que detém sich derzeit vor allem um seinen anstehenden dritten Gerichts-Prozess,nachdem der 35-Jährige 2022 zu 1,2 Millionen Euro Strafe wegen verurteilt worden war. Beim VfB Stuttgart, TSG Hoffenheim, FC Schalke 04 e uma temporada de Sogar no FC Bayern München, com Sebastian Rudy no último 15 Jahren fest na Bundesliga-Inventar. O meu Zeit verbrachte der defensive Mittelfeldspieler bei Hoffenheim, dort ist er sogar Rekordfeldspieler des Vereins. “ Ich bin jetzt in einer Phase meiner Karriere angekommen, in the mir genau überlegen möchte, wie es fußballerisch for mich weitergehen könnte ”, sagte der WM-Teilnehmer von 2018, nachdem er die TSG im Sommer morre Jahres verließ. “ Vielleicht ergibt sich noch einmal ein weiterer Schritt. Ich habe jedenfalls noch Lust zu kicken und bin offen for Neues. ” Mehr zum Thema Ob in the Serie A for Sampdoria Genua,na Liga do FC Valencia ou na Premier League do FC Arsenal. Bis 2021 hielt sich Shkodran Mustafi kontinuierlich auf den größten Bühnen des Weltfußballs. War mit einer Ablösesumme de 41 milhões de euros ( 2016 de Valencia zu Arsenal ) seiner Zeit einer der teuersten deutschen Profis. Com o Nationalmannschaft de 2014, Weltmeister, também conhecido como EM 2016 war er dabei. Seit 2021, veja Karriere allerdings ins Stocken geraten. No entanto, este é o caso de um FC Schalke war Mustafi einige Zeit vereinslos, e ele é o melhor lugar para Klub UD Levante anheuerte. Dort lief in the Sommer sein Arbeitspapier aus, the abgelaufene Saison verbrachte der Innenverteidiger mit mit einer Muskelverletzung zu weiten Teilen auf der Tribüne. Jetzt ist der 31-Jährige zwar wieder fit - bislang aber noch ohne Klub.Um Karriereende steht for Mustafi noch nicht zur Diskussion, sehr wohl aber . “ Wenn na Arábia Saudita, Estados Unidos, Titel zu gewinnen oder ein Projekt zu starten, sondern wegen des Geldes – da müssen wir uns nichts vormachen ”, sagte Mustafi jüngst im -Entrevista. No Schulz 2019, para mais de 25 milhões de euros no TSG Hoffenheim no Borussia Dortmund wechselte, guerra e guerra no gefragtesten Außenverteidiger Deutschlands. Nur vier Jahre später ist der Glanz verflogen und Zeit von Schulz in Dortmund gemeinhin als “ Missverständnis ” bekannt. Schon in der vergangenen Saison spielte Schulz in the Plänen von Edin Terzic keine Rolle mehr und stand nicht mehr im Kader des Vizemeisters. In diesem Sommer - für eine Abfindungszahlung in Höhe von 2,5 Millionen Euro. “ Wir sprechen gerade mit anderen Klubs,damit wir for the Spieler the best Lösung finden ”, hatte sein Berater Roger Wittmann im Gespräch mit den erklärt. Stand September ist Schulz allerdings immer noch vereinslos. Im Sommer nach zwölf Jahren. O Werkself-Legende kam schon in der letzten Saison kaum noch zum Zug und absolvierte nur wenige Spielminuten - auch wegen viel Verletzungspech. “ Bayer 04 é tão importante quanto Herz gewachsen, dass mir dieser wohlüberlegte Schritt dennoch sehr, sehr weh tut ”, sagte Bellarabi zum Abschied. Doch era kommt jetzt? Com 33 Jahren steht der Rechtsaußen, der nach der Weltmeisterschaft 2014 na Nationalmannschaft drängte, keineswegs automatisch vor dem Karriereende. Eins ist klar: Gegen seine alte Liebe Leverkusen er nicht antreten müssen. “ Wenn sein Körper mitspielt e er noch interessante Angebote bekommt,erwägt Bellarabi die Fortsetzung seiner Karriere im außereuropäischen Ausland ”, hieß es in der Abschiedsmitteilung des Klubs. Über den Sommer fand sich bislang aber wohl kein solta Angebot. Mehr zum Thema Er galt eins als eines der vielversprechendsten Talente des deutschen Fußballs - heute ist Amin Younes eher als Skandalspieler bekannt. Na Alemanha, Durchbruch auf the internationale Fußballbühne bei Ajax Amsterdam im Jahr 2015, entre os Karriere des heute 30-Jährigen in the falsche Richtung. Nach mehreren Disziplinlosigkeiten und Suspendierungen wechselte der Confed-CupSieger Anfang 2022 nach Saudi-Arabien. Doch weder dort noch mit einer Leihsaison beim FC Utrecht, the Sommer endete, fand Younes den Weg zurück in the Spur. Seinen Vertrag bei Al-Ettifaq löste er im Juli in “ freundschaftlichem Einvernehmen ” auf.“ Ich habe mich dazu entschieden, ab sofort wieder nach einem neuen Abenteuer zu suchen ”, ließ Younes verlauten. Derzeit. 2018 stand Marvin Plattenhardt für die Deutsch Nationalmannschaft bei der Weltmeisterschaft in Russland auf dem Platz. Na versão mais próxima, a estação de Herzensklub Hertha BSC é um dos Kapitän auf Feld. Doch nach dem Abstieg der Alten Dame na zweite Bundesliga endete die Zeit des Linksverteidigers bei der Hertha nach neun Jahren. Seitdem sucht der 31-Jährige einen neuen Klub. Der wollte sich über den Sommer einfach nicht finden. Bis Plattenhardt seine Schuhe for einen neuen Verein schnüren darf, hält der Linksfuß sich mit Konditionseinheiten beim Brandenburger Oberligisten Eintracht Stahnsdorf fit. Wegen eines Knorpelschadens stand André Hahn seit Oktober 2022 nicht mehr auf dem Fußballplatz.Bis zum Sommer stand der 33-Jährige noch beim FC Augsburg unter Vertrag. Beim selben Verein, wo vor zehn Jahren seine Bundesliga-Karriere começou - doch jetzt entschieden sich die Fuggerstädter gegen eine Vertragsverlängerung. “ Na lista de músicas Knieverletzung geht es aktuell for mich darum, alles dafür zu tun, wieder auf den Platz zurückzukehren ”, kündigte Hahn im Anschluss an. Um novo artigo sobre o Stürmer, no mês de maio de 2014, foi publicado em Polen zu seinem einzigen Einsatz no Nationalmannschaft kam, aber noch immer nicht gefunden."wieder auf den Platz zurückzukehren ”, kündigte Hahn im Anschluss an. Um novo artigo sobre o Stürmer, no mês de maio de 2014, foi publicado em Polen zu seinem einzigen Einsatz no Nationalmannschaft kam, aber noch immer nicht gefunden."wieder auf den Platz zurückzukehren ”, kündigte Hahn im Anschluss an. Um novo artigo sobre o Stürmer, no mês de maio de 2014, foi publicado em Polen zu seinem einzigen Einsatz in the Nationalmannschaft kam, aber noch immer nicht gefunden.",
+"pubDate": "2023-09-12 06:31:00",
+"image_url": "https://www.maz-online.de/resizer/Qr62OSrNncMiPUu_wXJr-Wld8Cg=/596x0/filters:quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/madsack/3RQZVQJSJFB6ZDNR73LQHBKCHQ.jpg",
+"source_id": "maz_online",
+"fonte_prioridade": 17076827,
+-"país": [
+"germany"
+],
+-"categoria": [
+"esportes"
+],
+"língua": "alemão"
+},
+...
+~~~
