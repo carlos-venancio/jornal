@@ -1,0 +1,19 @@
+.container-btn {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 14pt;
+    color: black;
+    background-color: #5297FF;
+    padding: 10px;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    background-color: #1e61c5;
+}

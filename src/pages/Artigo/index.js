@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import { useParams, useNavigate } from "react-router";
+import './artigo.css'
 
 export default function Artigo(){
     
@@ -36,19 +37,27 @@ export default function Artigo(){
 
     return(
         <div className="container">
+            <div className="info">
 
-            <p> Home &gt; {categoria}</p>
+                <h1 className="titulo"> {artigo.title} </h1>
+                <div className="row-between">
+                    <p>Fonte: {artigo.source_id}</p>
+                    <p>{new Date(artigo.pubDate).toLocaleDateString()}</p>
+                </div>
+                <img src={artigo.image_url} className="img"/>
 
-            <h1> {artigo.title} </h1>
-            <div>
-                <p>Fonte: {artigo.source_id}{artigo.creator}</p>
-                <p>{artigo.pub_date}</p>
+                {/* aplica um recorte e fragameta o texto separando por . */}
+                {artigo.content.split('.').map((item) => {
+                    return (
+                        <p className="texto">{item}.</p>
+                    )
+                })}
+
+                <div className="container-btn">
+                    <a href={artigo.link} target="_blank" className="btn"> Leia a matéria completa</a>
+                </div>
+                {/* consulta a materia completa no site de origem */}
             </div>
-            <img src={artigo.image_url}/>
-            <p>{artigo.description}</p>
-
-            {/* consulta a materia completa no site de origem */}
-            <a href={artigo.link} target="_blank"> Leia mais</a>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // o useHistory foi trocado por useNavigate na versão 6 do react-router-dom
 import { useParams, useNavigate } from "react-router-dom";
 import MontarCard from "../../components/montarCard";
+import './categoria.css'
 
 export default function Categoria(){
 
@@ -29,8 +30,39 @@ export default function Categoria(){
 
     return (
         <div className="container">
-            <h1> {categoria} </h1>
-            <MontarCard categoria={categoria} cartao={2}/>
+            <h1 className="titulo"> {categoria} </h1>
+            <section>
+                <div className="row">
+                    <div className="column">
+                        <MontarCard qtd={2} categoria={categoria} cartao={2} />
+                    </div>
+                    <div className="column">
+                        <MontarCard qtd={2} categoria={categoria} cartao={2} inicio={3} />
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div className="row">
+                    <div className="column">
+                        <MontarCard qtd={2} categoria={categoria} cartao={2} />
+                    </div>
+                    <div className="column">
+                        <MontarCard qtd={2} categoria={categoria} cartao={2} inicio={3} />
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <div className="row">
+                    <div className="column">
+                        <MontarCard qtd={2} categoria={categoria} cartao={2} />
+                    </div>
+                    <div className="column">
+                        <MontarCard qtd={2} categoria={categoria} cartao={2} inicio={3} />
+                    </div>
+                </div>
+            </section>
         </div>
     )
 
