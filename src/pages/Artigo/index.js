@@ -30,7 +30,7 @@ export default function Artigo(){
     if(loading){
         return (
             <div className="container">
-                <p>Carregando...</p>
+                <div className="carregamento"></div>
             </div>
         )
     }

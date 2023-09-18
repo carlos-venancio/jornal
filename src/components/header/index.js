@@ -5,7 +5,7 @@ import logo from '../../assets/logo.png'
 function Header(){
      
     return(
-        <div>
+        <div className="menu"> 
             <div className="header">
                 <div>
                     <Link to="/">

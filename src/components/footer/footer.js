@@ -14,14 +14,14 @@ function Footer(){
                         </div>
 
                         <div className="footer_social_media">
-                            <a href="https://github.com/carlos-venancio" class="footer-link" >
+                            <a href="https://github.com/carlos-venancio" target="_blank" class="footer-link" >
                             <img className="git_footer" src= {git}/>Carlos
                                 
                             </a>
                         </div>
                                 
                         <div className="footer_social_media">
-                            <a href="https://github.com/PauloBezmon1" class="footer-link" >
+                            <a href="https://github.com/PauloBezmon1" target="_blank" class="footer-link" >
                             <img className="git_footer" src= {git}/>Paulo
                             </a>
                         </div>
@@ -34,7 +34,7 @@ function Footer(){
 
                 </div>
                         <div className="footer_copyright">
-                           <p> @2023 All rights reserve</p>
+                           <p> Copyright @ 2023 | BNN | Todos os direitos reservados</p>
                         </div>
         </div>
     )

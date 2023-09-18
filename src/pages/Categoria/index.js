@@ -23,7 +23,7 @@ export default function Categoria(){
     if(loading){
         return (
             <div className="container">
-                <p>Carregando...</p>
+                <div className="carregamento"></div>
             </div>
         )
     }
