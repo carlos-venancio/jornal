@@ -12,7 +12,7 @@ export default function Categoria(){
   
     useEffect(() => {
 
-        // verifica se a categoria é uma possibilidade dentro do sistema, senão for retorna para home
+        // verifica se a categoria é uma possibilidade dentro do sistema, senão for, retorna para home
         if(sessionStorage.getItem(categoria) === null){
             pagina('/',{replace: true})
         }

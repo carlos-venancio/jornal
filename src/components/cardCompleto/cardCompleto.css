@@ -57,12 +57,14 @@
         margin: 15px;
     }
 
-    .card-title {
-        font-size: 16pt;
+    .card-title-cc {
+        font-size: 1.1em;
+        padding: 0 20px;
     }
 
     .card-dialog {
         width: 100%;
+        padding: 0;
     }
 
     .card-img-cc {

@@ -7,26 +7,39 @@ import ConsultarArtigos from "../../components/consultaArtigos"
 
 export default function Home() {
     
-    // faz um carregamento de página enquanto está pesquisando os dados
     const [loading,setLoading] = useState(true)
-
+    
     useEffect(() => {
-
-        // representa as categorias que seram precarregadas
+        
+    // representa as categorias que seram pre-carregadas
         const categorias = [ "business", "entertainment","politics" , "sports", "science", "technology" ]
-
+        
         // executa todas as buscas
         categorias.map(async (categoria) => {
+
+            // realiza uma busca para cada artigo
             await ConsultarArtigos(categoria)
+            console.log(JSON.parse(sessionStorage.getItem(categoria)))
         })
 
-        // caso todos as categorias estejam carregadas (true) para de exibir o loop (muda para false)
-        setTimeout(() => {
-            setLoading(false)
-        },1500)
-        
-    },[])
 
+        // verifica se já buscou todas as categorias a cada 1s
+        const contador = setInterval(() => {
+            
+            // compara a quantidade no sessionStorage com a quantidade de categorias desejadas
+            if (sessionStorage.length === categorias.length){
+                setLoading(false)
+
+                // para o loop quando a tela for renderizada
+                clearInterval(contador)
+            }
+
+        },1000) 
+        
+    },[loading])
+    
+    console.log(loading)
+    
     if (loading){
         return (
             <div className="container">
@@ -41,6 +54,7 @@ export default function Home() {
             <section>
                 <div className="capa-row">
                     <MontarCard qtd={1} categoria={'entertainment'} cartao={3} />
+                    {/* monta um conjunto de cards de acordo com a categoria selecionada  */}
                     <div className="column">
                         <MontarCard qtd={2} categoria={'politics'} cartao={2} />
                     </div>
@@ -50,9 +64,7 @@ export default function Home() {
 
             <section>
                 <h1 className="titulo"> Politica </h1>
-                {/* coloca na tela as categorias selecionadas  */}
-                {/* IMPLEMENTAR: pré-carregar todos os tópicos e coloca-los na página */}
-                <div className="row">
+                 <div className="row">
                     <MontarCard qtd={3} categoria={'politics'} cartao={1}/>
                 </div>
                 <Btn categoria={'politics'}> Mais dessa categoria </Btn>
@@ -81,6 +93,7 @@ export default function Home() {
                 </div>
                 <Btn categoria={'politics'}> Mais dessa categoria </Btn>
             </section>
+
         </div>
     )
 }

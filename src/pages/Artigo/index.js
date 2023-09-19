@@ -40,11 +40,14 @@ export default function Artigo(){
             <div className="info">
 
                 <h1 className="titulo"> {artigo.title} </h1>
+
+                {/* informações adicionais como fonte e data */}
                 <div className="row-between">
                     <p>Fonte: {artigo.source_id}</p>
                     <p>{new Date(artigo.pubDate).toLocaleDateString()}</p>
                 </div>
-                <img src={artigo.image_url} className="img"/>
+
+                <img src={artigo.image_url} className="img" alt={artigo.title}/>
 
                 {/* aplica um recorte e fragameta o texto separando por . */}
                 {artigo.content.split('.').map((item) => {
@@ -53,10 +56,10 @@ export default function Artigo(){
                     )
                 })}
 
-                <div className="container-btn">
-                    <a href={artigo.link} target="_blank" className="btn"> Leia a matéria completa</a>
-                </div>
                 {/* consulta a materia completa no site de origem */}
+                <div className="container-btn">
+                    <a href={artigo.link} target="_blank" className="btn" rel="noreferrer"> Leia a matéria completa</a>
+                </div>
             </div>
         </div>
     )

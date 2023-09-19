@@ -9,10 +9,10 @@ export default function MontarCard({qtd,categoria,cartao,inicio}){
     const recorteCategoria = JSON.parse(sessionStorage.getItem(categoria))
 
     // evita que a quantidade seja undefined
-    qtd = qtd == undefined ?  recorteCategoria.length : qtd 
+    qtd = qtd === undefined ?  recorteCategoria.length : qtd 
 
     // possibilita pega diferentes dados para fazer o card
-    inicio = inicio == undefined ?  0 : inicio
+    inicio = inicio === undefined ?  0 : inicio
 
     qtd += inicio
     // cartão simples é o modelo 1
